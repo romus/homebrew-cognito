@@ -3,8 +3,8 @@ class Cognito < Formula
 
   desc "CLI tool for anonymizing and restoring project-specific paths and words"
   homepage "https://github.com/romus/cognito"
-  url "https://github.com/romus/cognito/releases/download/v0.2.0/cognito-0.2.0.tar.gz"
-  sha256 "5de80066ad55d3c882230944f053149db655b753f4b098e43520726d7e6aed99"
+  url "https://github.com/romus/cognito/releases/download/v0.3.0/cognito-0.3.0.tar.gz"
+  sha256 "c2414e60df41536febbecd570bc3b9f672cc93e161d35d8f9ef9010873413ff6"
 
   depends_on "python@3.14"
 
@@ -13,7 +13,7 @@ class Cognito < Formula
   end
 
   test do
-    assert_match "0.2.0", shell_output("#{bin}/cognito --version")
+    assert_match "0.3.0", shell_output("#{bin}/cognito --version")
     config = testpath/"config.json"
     system bin/"cognito", "init-config", "--config", config
     assert_predicate config, :exist?
